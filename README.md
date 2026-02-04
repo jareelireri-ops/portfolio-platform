@@ -1,16 +1,28 @@
-# React + Vite
+# Creative Agency - Project Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based SPA built for a creative agency to manage and showcase their work. It's designed to be fast, responsive, and easy to update without needing to touch the code every time a new project drops.
 
-Currently, two official plugins are available:
+## What it does
+* **Live Search**: Filters through titles, descriptions, and tech stacks instantly.
+* **Project Management**: A clean form to add new work to the list dynamically.
+* **Fully Responsive**: Works on phones, tablets, and desktops using CSS Grid.
+* **No-Reload UX**: Everything updates in real-time for a smooth feel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technical Structure
+I broke the app down into modular components to keep the code clean and maintainable:
 
-## React Compiler
+* **State Hub (`App.jsx`)**: Handles the core logic, lifting state for the search and project list so everything stays in sync.
+* **Data Flow**: Used props to pass actions (like adding a project) and data (the project list) down the tree.
+* **Forms**: Built the project form as a controlled component with local state to handle inputs before pushing them to the main project array.
+* **Hierarchy**: 
+    `App` -> `ProjectForm` / `SearchBar` / `ProjectList` -> `ProjectCard`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to run it
+1.  `npm install` to grab the dependencies.
+2.  `npm run dev` to start the local server.
+3.  Add a project or search through the existing ones to see it in action.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built With
+* React
+* JavaScript (ES6+)
+* CSS3 (Grid & Flexbox)
